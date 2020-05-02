@@ -23,12 +23,10 @@ class SessionService {
   async store(req, res, next) {
     const { id, name, email } = await getUser(req, res, next);
     const user = { id, name, email };
-    res.json(
-      new Message({
-        user,
-        token: jwt.sign(user, secret, { expiresIn }),
-      })
-    );
+    res.json({
+      user,
+      token: jwt.sign(user, secret, { expiresIn }),
+    });
   }
 }
 
