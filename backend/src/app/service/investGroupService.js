@@ -1,9 +1,18 @@
 import Message from '../../base/util/message';
 import InvestGroup from '../models/investGroup';
+import User from '../models/user';
 
 class InvestGroupService {
   async index(req, res, next) {
-    const list = await InvestGroup.findAll();
+    const list = await InvestGroup.findAll({
+      include: [
+        {
+          model: User,
+          as: 'users',
+          attributes: ['id', 'name', 'email'],
+        },
+      ],
+    });
     res.json(new Message(list));
     next();
   }

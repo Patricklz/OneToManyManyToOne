@@ -5,16 +5,27 @@ class InvestGroup extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        term: Sequelize.STRING,
+        term: Sequelize.INTEGER,
         goal: Sequelize.STRING,
-        contribuition: Sequelize.VIRTUAL,
-        due_date: Sequelize.STRING,
+        contribution: Sequelize.DOUBLE,
+        expirationDay: Sequelize.INTEGER,
       },
       {
         sequelize,
+        modelName: 'investment_groups',
       }
     );
     return this;
+  }
+
+  static associate(models) {
+    this.belongsToMany(models.User, {
+      through: 'users_groups',
+      as: 'users',
+      foreignKey: 'user_id',
+      otherKey: 'group_id',
+      timestamps: false,
+    });
   }
 }
 

@@ -11,19 +11,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      prompt: {
+      term: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      objective: {
+      goal: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      contributionAmountMonth: {
+      contribution: {
         type: Sequelize.DOUBLE,
         allowNull: false,
       },
-      expirationDay: {
+      expiration_day: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

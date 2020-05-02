@@ -7,14 +7,17 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      id_group: {
+      group_id: {
         type: Sequelize.INTEGER,
-        references: { model: 'investment_groups', key: 'id' },
+        references: {
+          model: 'investment_groups',
+          key: 'id',
+        },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         allowNull: true,
       },
-      id_user: {
+      user_id: {
         type: Sequelize.INTEGER,
         references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',

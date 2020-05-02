@@ -1,9 +1,23 @@
 import Message from '../../base/util/message';
 import UsersGroups from '../models/usersGroups';
+import User from '../models/user';
+import InvestGroup from '../models/investGroup';
 
 class UsersGroupsService {
   async index(req, res, next) {
-    const list = await UsersGroups.findAll();
+    const list = await UsersGroups.findAll({
+      include: [
+        {
+          model: User,
+          as: 'user',
+          attributes: ['id', 'name', 'email'],
+        },
+        {
+          model: InvestGroup,
+          as: 'group',
+        },
+      ],
+    });
     res.json(new Message(list));
     next();
   }
@@ -23,7 +37,6 @@ class UsersGroupsService {
 
   async store(req, res) {
     const { body } = req;
-    console.log(body);
     try {
       await UsersGroups.findOne({
         where: { id_group: body.id_group },
