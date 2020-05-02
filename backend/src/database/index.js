@@ -6,8 +6,9 @@ import User from '../app/models/user';
 import File from '../app/models/file';
 import UsersGroups from '../app/models/usersGroups';
 import InvestGroup from '../app/models/investGroup';
+import Payments from '../app/models/payments';
 
-const models = [User, File, UsersGroups, InvestGroup];
+const models = [User, File, UsersGroups, InvestGroup, Payments];
 
 class DataBase {
   constructor() {
