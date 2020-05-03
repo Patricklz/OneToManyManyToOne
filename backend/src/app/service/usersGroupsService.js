@@ -1,4 +1,3 @@
-import Message from '../../base/util/message';
 import UsersGroups from '../models/usersGroups';
 import User from '../models/user';
 import InvestGroup from '../models/investGroup';
@@ -18,7 +17,7 @@ class UsersGroupsService {
         },
       ],
     });
-    res.json(new Message(list));
+    res.json(list);
     next();
   }
 
@@ -29,9 +28,9 @@ class UsersGroupsService {
       if (!model) {
         throw new Error('registro não encontrado');
       }
-      res.json(new Message(model));
+      res.json(model);
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
   }
 
@@ -39,13 +38,13 @@ class UsersGroupsService {
     const { body } = req;
     try {
       await UsersGroups.findOne({
-        where: { id_group: body.id_group },
+        where: { group_id: body.group_id },
       });
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
     const model = await UsersGroups.create(body);
-    res.json(new Message(model));
+    res.json(model);
   }
 }
 

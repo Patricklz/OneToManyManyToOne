@@ -1,4 +1,3 @@
-import Message from '../../base/util/message';
 import InvestGroup from '../models/investGroup';
 import User from '../models/user';
 
@@ -13,7 +12,7 @@ class InvestGroupService {
         },
       ],
     });
-    res.json(new Message(list));
+    res.json(list);
     next();
   }
 
@@ -24,9 +23,9 @@ class InvestGroupService {
       if (!model) {
         throw new Error('registro não encontrado');
       }
-      res.json(new Message(model));
+      res.json(model);
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
   }
 
@@ -40,10 +39,10 @@ class InvestGroupService {
         throw new Error('Grupo de investimento já existe');
       }
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
     const model = await InvestGroup.create(body);
-    res.json(new Message(model));
+    res.json(model);
   }
 }
 

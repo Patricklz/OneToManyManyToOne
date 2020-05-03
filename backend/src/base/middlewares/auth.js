@@ -2,7 +2,6 @@ import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 
 import { secret } from '../../config/auth';
-import Message from '../util/message';
 
 export default async (req, res, next) => {
   try {
@@ -20,7 +19,7 @@ export default async (req, res, next) => {
       req.userEmail = email;
     }
   } catch (ex) {
-    res.status(400).json(new Message(null, ex.message));
+    res.status(400).json(ex.message);
   }
   next();
 };

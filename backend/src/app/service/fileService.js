@@ -1,10 +1,9 @@
-import Message from '../../base/util/message';
 import File from '../models/file';
 
 class FileService {
   async index(req, res, next) {
     const list = await File.findAll();
-    res.json(new Message(list));
+    res.json(list);
     next();
   }
 
@@ -17,7 +16,7 @@ class FileService {
       });
       res.json(file);
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
   }
 }

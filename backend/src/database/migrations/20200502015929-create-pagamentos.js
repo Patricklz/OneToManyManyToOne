@@ -26,7 +26,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      verificationVoucher: {
+      verification_voucher: {
         type: Sequelize.STRING,
         allowNull: false,
       },

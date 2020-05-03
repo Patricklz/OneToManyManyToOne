@@ -1,10 +1,9 @@
-import Message from '../../base/util/message';
 import User from '../models/user';
 
 class UserService {
   async index(req, res, next) {
     const list = await User.findAll();
-    res.json(new Message(list));
+    res.json(list);
     next();
   }
 
@@ -15,9 +14,9 @@ class UserService {
       if (!model) {
         throw new Error('registro não encontrado');
       }
-      res.json(new Message(model));
+      res.json(model);
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
   }
 
@@ -31,10 +30,10 @@ class UserService {
         throw new Error('Email já existe');
       }
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
     const model = await User.create(body);
-    res.json(new Message(model));
+    res.json(model);
   }
 
   async update(req, res) {
@@ -60,9 +59,9 @@ class UserService {
       }
       await model.update(body);
     } catch (ex) {
-      res.status(400).json(new Message(null, ex.message));
+      res.status(400).json(ex.message);
     }
-    res.json(new Message(body));
+    res.json(body);
   }
 }
 

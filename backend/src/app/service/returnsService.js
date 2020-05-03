@@ -1,29 +1,29 @@
+import Returns from '../models/returns';
 import Payments from '../models/payments';
-import User from '../models/user';
-import InvestGroup from '../models/investGroup';
 
-class PaymentsService {
-  async index(req, res) {
-    const list = await Payments.findAll({
+class ReturnsService {
+  async index(req, res, next) {
+    const list = await Returns.findAll({
       include: [
         {
-          model: User,
-          as: 'user',
-          attributes: ['id', 'name', 'email'],
+          model: Returns,
+          as: 'returns',
+          attributes: ['returnValue', 'returnDate'],
         },
         {
-          model: InvestGroup,
-          as: 'group',
+          model: Payments,
+          as: 'payments',
         },
       ],
     });
     res.json(list);
+    next();
   }
 
   async show(req, res) {
     try {
       const { id } = req.params;
-      const model = await Payments.findByPk(id);
+      const model = await Returns.findByPk(id);
       if (!model) {
         throw new Error('registro não encontrado');
       }
@@ -36,15 +36,15 @@ class PaymentsService {
   async store(req, res) {
     const { body } = req;
     try {
-      await Payments.findOne({
-        where: { id_group: body.id_group },
+      await Returns.findOne({
+        where: { id_payments: body.id_payments },
       });
     } catch (ex) {
       res.status(400).json(ex.message);
     }
-    const model = await Payments.create(body);
+    const model = await Returns.create(body);
     res.json(model);
   }
 }
 
-export default new PaymentsService();
+export default new ReturnsService();
