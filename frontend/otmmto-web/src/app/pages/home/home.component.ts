@@ -7,16 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  contagem: number;
-
   constructor() { }
 
   ngOnInit(): void {
-    this.contagem = 0;
-  }
-
-  add(){
-    this.contagem++;
   }
 
 }
