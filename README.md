@@ -1,15 +1,28 @@
-#### OneToManyManyToOne
+_#### OneToManyManyToOne ####_
 
-Backend - NodeJs
+Desafio Gorila - Mega Hack
+A aplicação consiste em um backend em NodeJs e um frontend em Angular CLI
 
-install dependencies:
+A plataform possui o objetivo de por meio de uma cultura de educação financeira, incentivar desde cedo ou a qualquer momento, uma pessoa a criar hábitos de forma que se sinta confortável com: (i) outra pessoa administrando seu patrimônio; (ii) hábito de investimento a curto, médio e longo prazo.
 
-npm install or yarn install
+Ferramentas e libs.
 
-yarn start or npm start
+**_Back-End_**
+Sucrase + Nodemon;
+ESLint + Prettier + EditorConfig;
+Sequelize (Utilizando PostgreSQL);
+Docker (imagem PostgresSQL )
 
-FrontEnd - Angular Cli
+**_Front-End_**
+Angular CLI
+Boostrap
 
-install dependencies: npm install or yarn install
+Instalação e execução.
 
-yarn start or npm start
+**_Back-End_**
+yarn install ou npm install
+yarn start ou npm start
+
+**_Front-End_**
+yarn install ou npm install
+yarn start ou npm start
