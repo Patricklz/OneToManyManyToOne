@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { secret, expiresIn } from '../../config/auth';
 import User from '../models/user';
-import Message from '../../base/util/message';
 
 const getUser = async (req, res) => {
   try {
@@ -15,7 +14,7 @@ const getUser = async (req, res) => {
     }
     return user;
   } catch (ex) {
-    return res.status(400).json(new Message(null, ex.message));
+    return res.status(400).json(ex.message);
   }
 };
 
@@ -23,12 +22,10 @@ class SessionService {
   async store(req, res, next) {
     const { id, name, email } = await getUser(req, res, next);
     const user = { id, name, email };
-    res.json(
-      new Message({
-        user,
-        token: jwt.sign(user, secret, { expiresIn }),
-      })
-    );
+    res.json({
+      user,
+      token: jwt.sign(user, secret, { expiresIn }),
+    });
   }
 }
 
