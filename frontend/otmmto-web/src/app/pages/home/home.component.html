@@ -2,8 +2,7 @@
   <div class="d-flex justify-content-center">
     <h3>Acesse sua conta da Gorila</h3>
   </div>
-  <div class="d-flex justify-content-between align-items-center rounded-pill px-4 mt-5"
-    style="height: 50px; background-color: #3b5998;">
+  <div class="c-button c-button-facebook d-flex justify-content-between align-items-center rounded-pill px-4 mt-5" (click)="entrarAction()">
     <img height="40px" src="assets/facebook-mini.png" />
     <span class="text-white">Entrar com Facebook</span>
     <div></div>
@@ -27,14 +26,13 @@
     <input type="checkbox" class="form-check-input" id="permanecerLogado">
     <label class="form-check-label" for="permanecerLogado">Permanecer logado</label>
   </div>
-  <div class="d-flex justify-content-center align-items-center rounded-pill py-2 px-4"
-    style="background-color: #15c1c4; height: 50px;">
+  <div class="c-button c-button-primary d-flex justify-content-center align-items-center rounded-pill py-2 px-4" (click)="entrarAction()">
     <span class="text-white">Entrar</span>
   </div>
   <div class="d-flex justify-content-center mt-3">
-    <span style="color: #15c1c4;">Esqueci minha senha</span>
+    <span class="c-link">Esqueci minha senha</span>
   </div>
   <div class="d-flex justify-content-center mt-5">
-    <span>Não possui conta na Gorila?</span><span class="ml-2" style="color: #15c1c4;">Criar conta</span>
+    <span>Não possui conta na Gorila?</span><span class="ml-2 c-link" (click)="criarContaAction()">Criar conta</span>
   </div>
 </div>

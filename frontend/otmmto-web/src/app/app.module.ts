@@ -7,6 +7,12 @@ import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-u
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutInternoComponent } from './components/layout-interno/layout-interno.component';
 import { MetasComponent } from './pages/metas/metas.component';
+import { WizardComponent } from './pages/wizard/wizard.component';
+import { NomeDesafioComponent } from './pages/wizard/nome-desafio/nome-desafio.component';
+import { Valor1Component } from './pages/wizard/valor1/valor1.component';
+import { Valor2Component } from './pages/wizard/valor2/valor2.component';
+import { ParticipantesComponent } from './pages/wizard/participantes/participantes.component';
+import { FimComponent } from './pages/wizard/fim/fim.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +21,13 @@ import { MetasComponent } from './pages/metas/metas.component';
     LayoutBaseComponent,
     CadastrarUsuarioComponent,
     LayoutInternoComponent,
-    MetasComponent
+    MetasComponent,
+    WizardComponent,
+    NomeDesafioComponent,
+    Valor1Component,
+    Valor2Component,
+    ParticipantesComponent,
+    FimComponent
   ],
   imports: [
     BrowserModule,

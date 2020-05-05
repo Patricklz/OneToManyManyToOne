@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  entrarAction() {
+    this.router.navigateByUrl("/metas");
+  }
+
+  cadastrarAction() {
+    this.router.navigateByUrl("/home");
   }
 
 }
