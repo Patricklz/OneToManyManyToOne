@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LayoutBaseComponent } from './components/layout-base/layout-base.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
+import { LayoutInternoComponent } from './components/layout-interno/layout-interno.component';
+import { MetasComponent } from './pages/metas/metas.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,16 @@ const routes: Routes = [
       {
         path: "cadastrar-usuario",
         component: CadastrarUsuarioComponent
+      },
+    ],
+  },
+  {
+    path: "",
+    component: LayoutInternoComponent,
+    children: [
+      {
+        path: "metas",
+        component: MetasComponent
       },
     ],
   },
