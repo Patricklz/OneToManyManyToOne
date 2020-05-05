@@ -5,13 +5,17 @@ import { AppComponent } from './app.component';
 import { LayoutBaseComponent } from './components/layout-base/layout-base.component';
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LayoutInternoComponent } from './components/layout-interno/layout-interno.component';
+import { MetasComponent } from './pages/metas/metas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LayoutBaseComponent,
-    CadastrarUsuarioComponent
+    CadastrarUsuarioComponent,
+    LayoutInternoComponent,
+    MetasComponent
   ],
   imports: [
     BrowserModule,
