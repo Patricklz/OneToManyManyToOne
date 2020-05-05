@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-metas',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MetasComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  criarAction(){
+    this.router.navigateByUrl("/wizard");
   }
 
 }

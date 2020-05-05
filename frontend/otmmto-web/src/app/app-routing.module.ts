@@ -5,6 +5,7 @@ import { LayoutBaseComponent } from './components/layout-base/layout-base.compon
 import { CadastrarUsuarioComponent } from './pages/cadastrar-usuario/cadastrar-usuario.component';
 import { LayoutInternoComponent } from './components/layout-interno/layout-interno.component';
 import { MetasComponent } from './pages/metas/metas.component';
+import { WizardComponent } from './pages/wizard/wizard.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
       {
         path: "metas",
         component: MetasComponent
+      },
+      {
+        path: "wizard",
+        component: WizardComponent
       },
     ],
   },

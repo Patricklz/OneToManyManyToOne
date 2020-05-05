@@ -4,3 +4,33 @@ html, body {
     width: 100vw;
     height: 100vh;
 }
+
+.c-button {
+    cursor: pointer;
+    height: 50px;
+}
+
+.c-button:hover {
+    background-color: cornflowerblue;
+}
+
+.c-button-primary {
+    background-color: #15c1c4; 
+}
+
+.c-button-secondary {
+    border: solid 1px #15c1c4;
+}
+
+.c-button-facebook {
+    background-color: #3b5998;
+}
+
+.c-link {
+    color: #15c1c4;
+    cursor: pointer;
+}
+
+.c-link:hover {
+    color: cornflowerblue;
+}

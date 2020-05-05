@@ -1,0 +1,16 @@
+<div class="w-100 mt-5" style="background-color: #15c1c4; height: 5px;"></div>
+<div class="w-100 d-flex justify-content-between">
+    <span [ngStyle]="{ 'color': telaSelecionada === 0 ? '#15c1c4' : 'grey' }">Nome do desafio</span>
+    <span [ngStyle]="{ 'color': telaSelecionada === 1 || telaSelecionada === 2 ? '#15c1c4' : 'grey' }">Valor do desafio</span>
+    <span [ngStyle]="{ 'color': telaSelecionada === 3 ? '#15c1c4' : 'grey' }">Participantes</span>
+    <span [ngStyle]="{ 'color': telaSelecionada === 4 ? '#15c1c4' : 'grey' }">Fim</span>
+</div>
+<div class="mt-5 w-100 card">
+    <div class="card-body d-flex justify-content-center">
+        <app-nome-desafio *ngIf="telaSelecionada === 0" (avancar)="avancarAction()"></app-nome-desafio>
+        <app-valor1 *ngIf="telaSelecionada === 1" (voltar)="voltarAction()" (avancar)="avancarAction()"></app-valor1>
+        <app-valor2 *ngIf="telaSelecionada === 2" (voltar)="voltarAction()" (avancar)="avancarAction()"></app-valor2>
+        <app-participantes *ngIf="telaSelecionada === 3" (voltar)="voltarAction()" (avancar)="avancarAction()"></app-participantes>
+        <app-fim *ngIf="telaSelecionada === 4" (voltar)="voltarAction()"></app-fim>
+    </div>
+</div>
